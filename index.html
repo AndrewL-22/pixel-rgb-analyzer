@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPS5745 Interactive Image Analysis</title>
+
+  <!-- Link external CSS for modern, clean layout -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Load Chart.js library for RGB line chart visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- Main centered container -->
+  <div class="container">
+    <h1>CPS5745 Interactive Image Analysis</h1>
+
+    <!-- Step 1: Image upload input -->
+    <input type="file" id="fileInput" accept="image/*">
+
+    <!-- Step 2: Canvases for image display and drawing overlay -->
+    <div id="canvasWrapper">
+      <canvas id="imageCanvas"></canvas>  <!-- displays the uploaded image -->
+      <canvas id="overlay"></canvas>       <!-- used to draw the selection box -->
+    </div>
+
+    <!-- Step 3: Real-time pixel information (X, Y, RGB values) -->
+    <div id="info"></div>
+
+    <!-- Step 4: RGB toggle checkboxes -->
+    <div class="checkboxes">
+      <label><input type="checkbox" id="chkR" checked> Red</label>
+      <label><input type="checkbox" id="chkG" checked> Green</label>
+      <label><input type="checkbox" id="chkB" checked> Blue</label>
+    </div>
+
+    <!-- Step 5: Save selection button (sends data to the database) -->
+    <button id="saveBtn">Save Selection</button>
+    <span id="saveMsg"></span>
+
+    <!-- Step 6: Chart area to visualize RGB values across the selection -->
+    <div class="chart-container">
+      <canvas id="lineChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Step 7: Custom JavaScript for all interactive logic -->
+  <script src="script.js"></script>
+</body>
+</html>
